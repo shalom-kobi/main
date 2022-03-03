@@ -1,0 +1,21 @@
+---
+name: First File Test
+on: [push]
+
+jobs:
+  run-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        id: checkout
+        uses: actions/checkout@v3
+
+      - name: location
+        id: location
+        run: |
+          pwd
+
+      - name: list of files
+        id: list
+        run: |
+          ls -lah
