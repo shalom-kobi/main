@@ -7,18 +7,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - name: location
+      - name: Before Checkout
         id: location
         run: |
           pwd
           ls -lah
 
+      - name: Echo env
+        id: echo
+        run: |
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
+          echo "${{ github.token }}"
+
       - name: Checkout
         id: checkout
         uses: actions/checkout@v3
 
-      - name: list of files
-        id: list
+      - name: After Checkout
+        id: after
         run: |
           pwd
           ls -lah
