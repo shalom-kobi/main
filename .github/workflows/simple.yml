@@ -1,5 +1,5 @@
 ---
-name: First File Test
+name: Actions Workflow
 on: [push, pull_request]
 
 jobs:
